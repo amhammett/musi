@@ -1,0 +1,44 @@
+p {
+  font-family: Roboto, sans-serif;
+}
+
+.body {
+  margin: 48px 72px;
+}
+
+.body .page {
+  height:    100;
+  width:     100;
+  margin:    20;
+  textAlign: 'center';
+  display:   'inline-block';
+}
+
+.page {
+  margin-bottom: 24px;
+}
+
+.page-view {
+  margin: 24px;
+}
+
+.jdi-textform, .jes-textform {
+  margin-left: 24px;
+}
+
+#textfield-id {
+  width: 320px !important;
+}
+
+main {
+  margin-left: 256px;
+}
+
+.codeOutput {
+  margin: 24px;
+  padding-bottom: 24px;
+}
+
+.codeOutput pre {
+  white-space: pre-wrap;
+}
