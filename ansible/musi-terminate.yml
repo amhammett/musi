@@ -1,0 +1,13 @@
+---
+- name: MuSi Destroy Environment
+  hosts: localhost
+
+  vars:
+    role: ui
+
+  vars_files:
+    - ./vars/common.yml
+    - ./vars/secrets.yml
+
+  roles:
+    - s3-destroy

@@ -1,0 +1,6 @@
+---
+- name: service s3 hosting
+  s3_bucket:
+    name:  "{{dyn_bucket_name}}"
+    state: absent
+    force: yes

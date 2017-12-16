@@ -1,0 +1,32 @@
+---
+- name: s3 endpoint
+  debug: msg="{{dyn_bucket_name}}"
+
+# bug in py3 implementation. failed task completes successfully
+- name: service s3 hosting
+  s3_bucket:
+    name:   "{{dyn_bucket_name}}"
+    policy: "{{lookup('template', 'policy.json.j2')}}"
+  ignore_errors: true
+  register: s3_bucket_service
+  failed_when:
+    - s3_bucket_service.rc != 0
+    - not 'the JSON object must be str' in s3_bucket_service.stderr
+
+- name: s3 website
+  s3_website:
+    name:      "{{dyn_bucket_name}}"
+    error_key: "index.html"
+    state:     present
+
+- name: configure route53
+  route53:
+    alias:                yes
+    alias_hosted_zone_id: "{{dyn_s3_zone}}"
+    overwrite:            yes
+    record:               "{{dyn_bucket_name}}"
+    state:                present
+    type:                 A
+    value:                "s3-website-{{region}}.amazonaws.com"
+    zone:                 "{{dyn_bucket_zone}}"
+

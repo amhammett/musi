@@ -1,0 +1,21 @@
+---
+service: musi
+
+# http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints
+s3_hosted_zone_lookup:
+  us-east-2:      Z2O1EMRO9K5GLX
+  us-east-1:      Z3AQBSTGFYJSTF
+  us-west-1:      Z2F56UZL2M1ACD
+  us-west-2:      Z3BJ6K6RIION7M
+  ca-central-1:   Z1QDHH18159H29
+  ap-south-1:     Z11RGJOFQNVJUP
+  ap-northeast-2: Z3W03O7B5YMIYP
+  ap-southeast-1: Z3O0J2DXBE1FTB
+  ap-southeast-2: Z1WCIGYICN2BYD
+  ap-northeast-1: Z2M4EHUR26P7ZW
+  eu-central-1:   Z21DNDUVLTQW6Q
+  eu-west-1:      Z1BKCTXD74EZPE
+  eu-west-2:      Z3GKZC51ZF0DB4
+  sa-east-1:      Z7KQH4QJS55SO
+
+dyn_s3_zone: "{{s3_hosted_zone_lookup[region]}}"

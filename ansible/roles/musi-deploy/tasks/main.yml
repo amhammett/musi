@@ -1,0 +1,30 @@
+---
+- name: clean dist
+  file: path="{{playbook_dir}}/../build" state="absent"
+
+- name: generate envfile
+  template:
+    src: .env.production.j2
+    dest: "{{playbook_dir}}/../.env.production"
+
+- name: build musi
+  shell: >
+    make build
+  args:
+    chdir: "{{playbook_dir}}/.."
+  register: shell_build_musi
+
+- name: build output
+  debug: msg="{{shell_build_musi.stdout.split('\n')}}"
+
+- name: sync app
+  s3_sync:
+    bucket:               "{{dyn_bucket_name}}"
+    delete:               yes
+    file_change_strategy: force
+    file_root:            "{{playbook_dir}}/../build"
+
+- name: remove envfile
+  file:
+    path: "{{playbook_dir}}/../.env.production"
+    state: absent

@@ -1,0 +1,11 @@
+---
+- name: MuSi Environment and Deploy
+  hosts: localhost
+
+  vars_files:
+    - ./vars/common.yml
+    - ./vars/secrets.yml
+
+  roles:
+    - s3-hosting
+    - musi-deploy
