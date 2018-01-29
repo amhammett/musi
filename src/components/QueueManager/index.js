@@ -45,16 +45,25 @@ class QueueSection extends React.Component {
   }
 
   componentDidMount() {
-    const url = `${Settings.endpoints.QM_ENDPOINT}`
+    const url = Settings.endpoints.QMS_ENDPOINT
     fetch(url)
-    .then((response) => {
-      return response.json();
-    }).then((json) => {
-      if(!Object.keys(json)) {
-        json = { 'QueueEmpty': [{'user': 'none-found', 'host': '...' }] };
+    .then(res => {
+      if (res.ok) {
+        return res.json()
       } else {
-        this.updateQueueData(json);
+        console.log(res.err)
       }
+    })
+    .then((json) => {
+      console.log(json)
+      if(Object.keys(json).length === 0) {
+        json = { 'QueueEmpty': [{'user': 'queues-empty', 'host': 'no users found' }] };
+      }
+      this.updateQueueData(json)
+    })
+    .catch(err => {
+      console.log(err)
+      this.updateQueueData({ 'QueueEndpointError': [{'user': 'system-error', 'host': 'unable to contact server' }] })
     })
   }
 
