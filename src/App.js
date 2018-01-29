@@ -5,7 +5,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
 import './musi.css';
-import './MaterialIcons.css';
 import Router from './Router'
 import Menu from './Menu'
 
