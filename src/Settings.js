@@ -1,12 +1,9 @@
-
 const Settings = {
   endpoints: {
-    JDI_ENDPOINT: process.env.REACT_APP_JDI_ENDPOINT || 'http://127.0.0.1:3002/jdi',
-    JES_ENDPOINT: process.env.REACT_APP_JES_ENDPOINT || 'http://127.0.0.1:3002/jes/email',
-    QM_ENDPOINT: process.env.REACT_APP_QM_ENDPOINT || 'http://127.0.0.1:3002/qm/list-queue',
-    BI_ENDPOINT: process.env.REACT_APP_BI_ENDPOINT || 'http://127.0.0.1:9001/jn/error/investigate?url='
+    JLR_ENDPOINT: process.env.REACT_APP_JLR_ENDPOINT || 'http://127.0.0.1:9000/v1/jlr',
+    NSS_ENDPOINT: process.env.REACT_APP_NSS_ENDPOINT || 'http://127.0.0.1:3001/v1/nss',
+    QMS_ENDPOINT: process.env.REACT_APP_QMS_ENDPOINT || 'http://127.0.0.1:3003/v1/qms/list'
   }
 }
-
 
 export default Settings;

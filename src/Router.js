@@ -2,19 +2,19 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import Home from './components/Home'
-import BuildInvestigation from './components/BuildInvestigation'
-import JenkinsDynamicInventory from './components/JenkinsDynamicInventory'
-import JobEmailService from './components/JobEmailService'
-import QueueManager from './components/QueueManager'
+import JenkinsLogRetrieval from './components/JenkinsLogRetrieval'
+import NotificationSubscriptionService from './components/NotificationSubscriptionService'
+import QueueManagerService from './components/QueueManagerService'
+import YetAnotherMailService from './components/YetAnotherMailService'
 
 const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home} />
-      <Route path='/bi' component={BuildInvestigation} />
-      <Route path='/jdi' component={JenkinsDynamicInventory} />
-      <Route path='/jes' component={JobEmailService} />
-      <Route path='/qm' component={QueueManager} />
+      <Route path='/jlr' component={JenkinsLogRetrieval} />
+      <Route path='/nss' component={NotificationSubscriptionService} />
+      <Route path='/qms' component={QueueManagerService} />
+      <Route path='/yams' component={YetAnotherMailService} />
     </Switch>
   </main>
 )

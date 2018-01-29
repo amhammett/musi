@@ -8,13 +8,13 @@ import FontIcon from 'material-ui/FontIcon';
 
 // move to db
 const menuList = [
-  { name: 'Queue Manager',     link: '/qm/queue',      icon: 'poll',       disabled: false },
-  { name: 'Jenkins Logs',      link: '/bi/build-logs', icon: 'sms failed', disabled: false },
-  { name: 'Job Email',         link: '/jes/job-email', icon: 'email',      disabled: false },
-  { name: 'Jenkins Inventory', link: '/jdi/master',    icon: 'dvr',        disabled: true },
-  { name: 'Admin',             link: '/admin',         icon: 'settings',   disabled: true },
-  { name: 'Logout',            link: '/logout',        icon: 'exit',       disabled: true},
+  { name: 'Queue Manager', link: '/qms',      icon: 'poll',        disabled: false },
+  { name: 'Notifications', link: '/nss',      icon: 'sms failed',  disabled: false },
 ]
+//  { name: 'Mail Service',  link: '/yams',     icon: 'email',       disabled: false },
+//  { name: 'Settings',      link: '/settings', icon: 'settings',    disabled: true },
+//  { name: 'Admin',         link: '/admin',    icon: 'lock',        disabled: true },
+//  { name: 'Logout',        link: '/logout',   icon: 'exit_to_app', disabled: true},
 //  { name: 'Master',            link: '/jdi/master',    icon: 'dvr',        disabled: true },
 //  { name: 'Minion',            link: '/jdi/minion',    icon: 'storage',    disabled: true },
 //  { name: 'Rule',              link: '/jdi/rule',      icon: 'label',      disabled: true },
